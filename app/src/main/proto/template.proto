@@ -1,0 +1,25 @@
+syntax = "proto3";
+option java_package = "com.github.akboyd88.proto";
+option java_outer_classname = "TemplateProtos";
+
+message EchoMessage {
+  string Message = 1;
+}
+
+message EchoResponse {
+  string Reply = 1;
+}
+
+message MultiplyMessage {
+  double a = 1;
+  double b = 2;
+}
+
+message MultiplyResponse {
+  double product = 1;
+}
+
+service TemplateService {
+    rpc Echo(EchoMessage) returns (EchoResponse);
+    rpc Multiply(MultiplyMessage) returns (MultiplyResponse);
+}
