@@ -1,6 +1,6 @@
 FROM alpine:3.13 AS build
 
-RUN apk add openjdk11 --no-cache
+RUN apk add openjdk11 protobuf protobuf-dev --no-cache
 
 
 WORKDIR /build
