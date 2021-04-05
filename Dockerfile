@@ -1,6 +1,6 @@
-FROM alpine:3.13 AS build
+FROM debian:buster AS build
 
-RUN apk add openjdk11 protobuf protobuf-dev --no-cache
+RUN apt-get install openjdk-11-headless -y
 
 
 WORKDIR /build
