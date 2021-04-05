@@ -1,6 +1,6 @@
 FROM debian:buster AS build
 
-RUN apt-get install openjdk-11-jdk-headless -y
+RUN apt-get update && apt-get install openjdk-11-jdk-headless -y
 
 
 WORKDIR /build
