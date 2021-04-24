@@ -3,12 +3,36 @@
  */
 package com.github.akboyd88.server;
 
+
+import com.github.akboyd88.components.AppComponent;
+import com.github.akboyd88.components.DaggerAppComponent;
+import com.github.akboyd88.services.EchoService;
+import com.github.akboyd88.services.MultiplyService;
+
+import javax.inject.Inject;
+import java.io.IOException;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+    private final TemplateServiceServerImpl server;
+
+    @Inject
+    public App(MultiplyService multiplyService, EchoService echoService){
+        server = new TemplateServiceServerImpl(new TemplateServiceImpl(echoService, multiplyService));
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public void start() throws IOException {
+        server.start();
+    }
+
+    public void waitTillShutdown() throws InterruptedException {
+        server.blockUntilShutdown();
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        final App app = DaggerAppComponent.builder()
+                .build().app();
+        app.start();
+        app.waitTillShutdown();
     }
 }
