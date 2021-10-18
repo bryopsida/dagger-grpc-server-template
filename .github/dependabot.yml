@@ -9,7 +9,11 @@ updates:
     directory: "/app" # Location of package manifests
     schedule:
       interval: "daily"
+    assignees:
+      - bryopsida
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - bryopsida
