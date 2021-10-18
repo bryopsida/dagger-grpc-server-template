@@ -22,7 +22,7 @@ repositories {
 def grpcVersion = '1.41.0'
 def protoBufVersion = '3.17.3'
 def guavaVersion = '31.0.1-jre'
-def junitVersion = '5.7.2'
+def junitVersion = '5.8.1'
 def annotationsApiVersion = '1.3.2'
 def daggerVersion = '2.39.1'
 def errorProneVersion = '2.9.0'
