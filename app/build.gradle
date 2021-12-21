@@ -19,7 +19,7 @@ repositories {
     jcenter()
 }
 
-def grpcVersion = '1.42.1'
+def grpcVersion = '1.43.1'
 def protoBufVersion = '3.19.1'
 def guavaVersion = '31.0.1-jre'
 def junitVersion = '5.8.1'
