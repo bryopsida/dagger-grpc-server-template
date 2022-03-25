@@ -7,7 +7,7 @@ WORKDIR /build
 ADD . .
 RUN ./scripts/build.sh
 
-FROM alpine:3.15.0 AS runtime
+FROM alpine:3.15.2 AS runtime
 RUN apk add openjdk11-jre --no-cache
 WORKDIR /app
 ADD scripts/entryPoint.sh /app/entryPoint.sh
