@@ -1,4 +1,4 @@
-FROM debian:buster AS build
+FROM debian:bullseye AS build
 
 RUN apt-get update && apt-get install openjdk-11-jdk-headless -y
 
